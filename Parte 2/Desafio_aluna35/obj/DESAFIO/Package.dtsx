@@ -1,0 +1,1377 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/2/2022 9:24:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-Q73NSV7A"
+  DTS:CreatorName="LAPTOP-Q73NSV7A\alici"
+  DTS:DTSID="{37EA7219-2B85-4581-8297-2D1A6511DB40}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{A098446A-2DC3-4EFD-A25E-AFCEDB8FDE50}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões do Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{5F4C12F9-A56F-4448-A96E-1A0254F99D7F}"
+      DTS:ObjectName="Gerenciador de Conexões do Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\alici\OneDrive\Área de Trabalho\Desafio\Desafio\BaseDadosDesafio.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões do Excel 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{17D07DF7-05FF-41B2-96F7-193E5B50AE74}"
+      DTS:ObjectName="Gerenciador de Conexões do Excel 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\alici\OneDrive\Área de Trabalho\Desafio\Desafio\BaseDadosDesafio.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões do Excel 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{62E07463-E29D-4B05-9BF2-12EAC6736047}"
+      DTS:ObjectName="Gerenciador de Conexões do Excel 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\alici\OneDrive\Área de Trabalho\Desafio\BaseDadosDesafio.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-Q73NSV7A.DW_aluna35]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{17CF8DC2-78D1-4DBC-B528-250D2A84D798}"
+      DTS:ObjectName="LAPTOP-Q73NSV7A.DW_aluna35">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-Q73NSV7A;Initial Catalog=DW_aluna35;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\PASSO 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{66D43BE9-3375-482B-947B-0543D7A8CFB1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PASSO 1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 1\Tarefa Executar SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{992CBE6B-E88B-46C3-97B5-4FD790B8901E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Executar SQL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{17CF8DC2-78D1-4DBC-B528-250D2A84D798}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 1\Tarefa Inserção em Massa"
+          DTS:CreationName="Microsoft.BulkInsertTask"
+          DTS:Description="Tarefa Inserção em Massa"
+          DTS:DTSID="{A184C90E-2EA4-4C3D-9232-F2AEC9824F9E}"
+          DTS:ExecutableType="Microsoft.BulkInsertTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Inserção em Massa"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <BulkInsertTask:BulkInsertTaskData
+              BulkInsertTask:DestinationConnectionName="{17CF8DC2-78D1-4DBC-B528-250D2A84D798}"
+              BulkInsertTask:DestinationTableName="[dbo].[DESAFIO]" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 1.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{C767135B-5B47-4B0A-9F1D-3ECE4E9FD289}"
+          DTS:From="Package\PASSO 1\Tarefa Executar SQL"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\PASSO 1\Tarefa Inserção em Massa" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PASSO 2"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{72E23811-2F70-440E-A221-1D95994CD430}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PASSO 2">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 2\Tarefa Fluxo de Dados"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{7862B444-FFF0-40E1-A12D-3A28C654E3D7}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarefa Fluxo de Dados"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[DESAFIO]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LAPTOP-Q73NSV7A.DW_aluna35]"
+                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-Q73NSV7A.DW_aluna35]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Segmento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Segmento" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Pais]"
+                          codePage="1252"
+                          dataType="str"
+                          length="60"
+                          name="Pais" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Produto]"
+                          codePage="1252"
+                          dataType="str"
+                          length="60"
+                          name="Produto" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Tipo_Desconto]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Tipo_Desconto" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Qtd_Vendas]"
+                          dataType="numeric"
+                          name="Qtd_Vendas"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Preco_de_custo]"
+                          dataType="i4"
+                          name="Preco_de_custo" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Preco_de_venda]"
+                          dataType="i4"
+                          name="Preco_de_venda" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Preco_de_bruta]"
+                          dataType="i4"
+                          name="Preco_de_bruta" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desconto]"
+                          dataType="numeric"
+                          name="Desconto"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Vendas]"
+                          dataType="numeric"
+                          name="Vendas"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Custo_da_venda]"
+                          dataType="i4"
+                          name="Custo_da_venda" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Lucro]"
+                          dataType="numeric"
+                          name="Lucro"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[Data_venda]"
+                          dataType="dbDate"
+                          name="Data_venda" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem do Excel"
+                  name="Origem do Excel"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O mapeamento de parâmetros no comando SQL para variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Gerenciador de Conexões do Excel 2]"
+                      connectionManagerRefId="Package.ConnectionManagers[Gerenciador de Conexões do Excel 2]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Outputs[Saída de Origem do Excel]"
+                      name="Saída de Origem do Excel">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </output>
+                    <output
+                      refId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Outputs[Saída de Erro de Origem do Excel]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem do Excel">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\PASSO 2\Tarefa Fluxo de Dados.Paths[Saída de Origem do Excel]"
+                  endId="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem do Excel"
+                  startId="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel.Outputs[Saída de Origem do Excel]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PASSO 3"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{494C7C97-678F-4647-A4F7-63EB0F01C3D0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PASSO 3">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Custo_da_venda"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{65FDF926-C952-4832-9D0B-676935291D4A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Custo_da_venda"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Data_venda"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{7914221C-7FE5-4151-9E75-D3000BFFF35E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data_venda"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Desconto"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{0F2E533A-8FE7-4831-AC9D-6177849B4179}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Desconto"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Lucro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{F345D415-9E22-414B-87FC-1BDB17E545D2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Lucro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Pais"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{678B527C-CD40-4631-910F-94450A89480B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Pais"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Preco_de_bruta"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{EA567D82-D321-490B-90EB-F653B4E714C2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Preco_de_bruta"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Preco_de_custo"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{24868BC9-4B4C-4975-8375-C20EF06B7B0E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Preco_de_custo"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Preco_de_venda"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{9B84EDE2-0009-4A64-BCAF-FBD2E8E5C306}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Preco_de_venda"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Produto"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{178EAB06-5183-4C37-80D4-2E7020B858D3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Produto"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Qtd_Vendas"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{AFED40B0-AD93-4A67-B17C-7671E52DE85E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Qtd_Vendas"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Segmento"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{F6A89789-2B73-4202-B12B-7A68C30CC046}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Segmento"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Tipo_Desconto"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{444BD268-4F58-4D8C-97AB-EFE272D67F63}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tipo_Desconto"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 3\Vendas"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{780E2FCD-B564-4F2A-9CF2-7F326A76CBBE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Vendas"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{C0B1EC44-9700-4399-B1AD-FBA71A1429DF}"
+          DTS:From="Package\PASSO 3\Segmento"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\PASSO 3\Pais" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{65CEA760-5797-4365-9213-6D411F6DD5EF}"
+          DTS:From="Package\PASSO 3\Pais"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\PASSO 3\Produto" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{8C19D4D0-8AE8-4669-8175-30124F5066E1}"
+          DTS:From="Package\PASSO 3\Custo_da_venda"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 10"
+          DTS:To="Package\PASSO 3\Lucro" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 11]"
+          DTS:CreationName=""
+          DTS:DTSID="{DF2C34CB-65A3-43D3-AFCC-01D93AF67D62}"
+          DTS:From="Package\PASSO 3\Lucro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 11"
+          DTS:To="Package\PASSO 3\Data_venda" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{AF83CAA9-141F-4F27-BBE6-150BB778C4B9}"
+          DTS:From="Package\PASSO 3\Produto"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 2"
+          DTS:To="Package\PASSO 3\Tipo_Desconto" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{73053AB2-11FD-425B-8F54-803B05B6E6A1}"
+          DTS:From="Package\PASSO 3\Tipo_Desconto"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 3"
+          DTS:To="Package\PASSO 3\Qtd_Vendas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{464785DA-C68E-4236-83C5-A5F4F251FC9F}"
+          DTS:From="Package\PASSO 3\Qtd_Vendas"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 4"
+          DTS:To="Package\PASSO 3\Preco_de_custo" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{0FF531A2-214C-41CB-B098-1289F485EF35}"
+          DTS:From="Package\PASSO 3\Preco_de_custo"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 5"
+          DTS:To="Package\PASSO 3\Preco_de_venda" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{76955043-C4BD-4E1A-A515-8D24A41E3B57}"
+          DTS:From="Package\PASSO 3\Preco_de_venda"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 6"
+          DTS:To="Package\PASSO 3\Preco_de_bruta" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{363674D2-6DF7-4FE6-BB3C-5C8487A1E586}"
+          DTS:From="Package\PASSO 3\Preco_de_bruta"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 7"
+          DTS:To="Package\PASSO 3\Desconto" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{2C32E33D-CE36-43E0-8BE8-7A1A1C637B7D}"
+          DTS:From="Package\PASSO 3\Desconto"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 8"
+          DTS:To="Package\PASSO 3\Vendas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PASSO 3.PrecedenceConstraints[Restrição 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{E6AEB176-3A1F-419A-9024-0A919C7E9E37}"
+          DTS:From="Package\PASSO 3\Vendas"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 9"
+          DTS:To="Package\PASSO 3\Custo_da_venda" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PASSO 4"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{246E0E82-32ED-4FB2-AE6A-2774B031FCCF}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PASSO 4">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\PASSO 4\LOG"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{75F2CCC2-025F-4353-9A33-409B546432C5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LOG"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{37A81996-A7B6-47DB-B8B9-ACA0EBD411E6}"
+      DTS:From="Package\PASSO 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\PASSO 2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4F77DE3C-79AB-4055-896F-586333BAF963}"
+      DTS:From="Package\PASSO 2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\PASSO 3" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{42E9EB85-5B1D-4D49-B166-D851F325A07B}"
+      DTS:From="Package\PASSO 3"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 2"
+      DTS:To="Package\PASSO 4" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\PASSO 1\Tarefa Executar SQL"
+          TopLeft="18.8333328035143,5.5" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\PASSO 1\Tarefa Inserção em Massa"
+          TopLeft="5.5,101.700000764529" />
+        <EdgeLayout
+          Id="Package\PASSO 1.PrecedenceConstraints[Restrição]"
+          TopLeft="106.566666401757,47.0999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.6000007645289"
+              Start="0,0"
+              End="0,47.1000007645289">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.1000007645289" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="212,198.4"
+          Size="212,241.6"
+          Id="Package\PASSO 1"
+          TopLeft="32.1666667991215,117.957143512453" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\PASSO 2\Tarefa Fluxo de Dados"
+          TopLeft="19.8666547788519,2.43333466953706" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="222.4,57.6"
+          Size="222.4,100.8"
+          Id="Package\PASSO 2"
+          TopLeft="284.666657957766,186.090477148843" />
+        <NodeLayout
+          Size="98.4,41.6"
+          Id="Package\PASSO 3\Pais"
+          TopLeft="53.8333323068089,79.1666672521167" />
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\PASSO 3\Produto"
+          TopLeft="53.0000001986822,132.566667438083" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\PASSO 3\Qtd_Vendas"
+          TopLeft="45.499998410543,240.952336795552" />
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\PASSO 3\Segmento"
+          TopLeft="35.3333102530913,14.4000013224284" />
+        <NodeLayout
+          Size="113.6,41.6"
+          Id="Package\PASSO 3\Vendas"
+          TopLeft="257.433326346345,13.7840684366745" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\PASSO 3\Desconto"
+          TopLeft="265.414228351014,70.9840688912592" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\PASSO 3\Preco_de_bruta"
+          TopLeft="255.666663818889,129.917402692953" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\PASSO 3\Preco_de_venda"
+          TopLeft="253.133329028553,184.517403126874" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\PASSO 3\Preco_de_custo"
+          TopLeft="250.633330319987,237.050736639287" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\PASSO 3\Tipo_Desconto"
+          TopLeft="35.4999997019767,184.500001301765" />
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição]"
+          TopLeft="100.58332127995,56.0000013224284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.1666659296883"
+              Start="0,0"
+              End="0,15.6666659296883">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.6666659296883" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 1]"
+          TopLeft="53.8333323068089,99.9666672521167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.83333210812669,53.4000001859665"
+              Start="0,0"
+              End="-8.33333210812669,53.4000001859665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-19.3333321081267,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.3333321081267,0"
+                    Point2="-23.3333321081267,0"
+                    Point3="-23.3333321081267,4" />
+                  <mssgle:LineSegment
+                    End="-23.3333321081267,49.4000001859665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.3333321081267,49.4000001859665"
+                    Point2="-23.3333321081267,53.4000001859665"
+                    Point3="-19.3333321081267,53.4000001859665" />
+                  <mssgle:LineSegment
+                    End="-8.33333210812669,53.4000001859665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 2]"
+          TopLeft="168.200000198682,153.366667438083">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.2999995032945,51.9333338636822"
+              Start="0,0"
+              End="22.7999995032945,51.9333338636822">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.7999995032945,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.7999995032945,0"
+                    Point2="37.7999995032945,0"
+                    Point3="37.7999995032945,4" />
+                  <mssgle:LineSegment
+                    End="37.7999995032945,47.9333338636822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.7999995032945,47.9333338636822"
+                    Point2="37.7999995032945,51.9333338636822"
+                    Point3="33.7999995032945,51.9333338636822" />
+                  <mssgle:LineSegment
+                    End="22.7999995032945,51.9333338636822" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 3]"
+          TopLeft="35.4999997019767,205.300001301765">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.99999870856627,56.4523354937868"
+              Start="0,0"
+              End="2.49999870856627,56.4523354937868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,52.4523354937868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,52.4523354937868"
+                    Point2="-22.5,56.4523354937868"
+                    Point3="-18.5,56.4523354937868" />
+                  <mssgle:LineSegment
+                    End="2.49999870856627,56.4523354937868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\PASSO 3\Custo_da_venda"
+          TopLeft="433.733300517667,14.7000004545847" />
+        <NodeLayout
+          Size="104.8,41.6"
+          Id="Package\PASSO 3\Lucro"
+          TopLeft="464.335529348402,81.4999999586742" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\PASSO 3\Data_venda"
+          TopLeft="443.233326048322,132.233333657053" />
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 4]"
+          TopLeft="181.499998410543,259.801536717419">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.1333319094441,0"
+              Start="0,0"
+              End="61.6333319094441,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.6333319094441,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 5]"
+          TopLeft="250.633330319987,252.250736639287">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="2.49999870856598,-46.933333512413"
+              Start="0,0"
+              End="-5.00000129143402,-46.933333512413">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,-4" />
+                  <mssgle:LineSegment
+                    End="-22.5,-42.933333512413" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,-42.933333512413"
+                    Point2="-22.5,-46.933333512413"
+                    Point3="-18.5,-46.933333512413" />
+                  <mssgle:LineSegment
+                    End="-5.00000129143402,-46.933333512413" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 6]"
+          TopLeft="253.133329028553,199.717403126874">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="2.533334790336,-49.000000433921"
+              Start="0,0"
+              End="-4.966665209664,-49.000000433921">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,-4" />
+                  <mssgle:LineSegment
+                    End="-22.5,-45.000000433921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,-45.000000433921"
+                    Point2="-22.5,-49.000000433921"
+                    Point3="-18.5,-49.000000433921" />
+                  <mssgle:LineSegment
+                    End="-4.966665209664,-49.000000433921" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 7]"
+          TopLeft="407.666663818889,150.717402692953">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.8524354678749,-58.9333338016938"
+              Start="0,0"
+              End="-12.3524354678749,-58.9333338016938">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,-4" />
+                  <mssgle:LineSegment
+                    End="22.5,-54.9333338016938" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,-54.9333338016938"
+                    Point2="22.5,-58.9333338016938"
+                    Point3="18.5,-58.9333338016938" />
+                  <mssgle:LineSegment
+                    End="-12.3524354678749,-58.9333338016938" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 8]"
+          TopLeft="387.814228351014,86.1840688912592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.7809020046691,-51.6000004545847"
+              Start="0,0"
+              End="-9.28090200466909,-51.6000004545847">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,-4" />
+                  <mssgle:LineSegment
+                    End="22.5,-47.6000004545847" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,-47.6000004545847"
+                    Point2="22.5,-51.6000004545847"
+                    Point3="18.5,-51.6000004545847" />
+                  <mssgle:LineSegment
+                    End="-9.28090200466909,-51.6000004545847" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 9]"
+          TopLeft="371.033326346345,32.2420344456296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.6999741713215,0"
+              Start="0,0"
+              End="55.1999741713215,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.1999741713215,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 10]"
+          TopLeft="514.434414933034,56.3000004545847">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.1999995040894"
+              Start="0,0"
+              End="0,17.6999995040894">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6999995040894" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PASSO 3.PrecedenceConstraints[Restrição 11]"
+          TopLeft="569.135529348402,102.299999958674">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.49779669991972,50.7333336983786"
+              Start="0,0"
+              End="15.9977966999197,50.7333336983786">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.9977966999197,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.9977966999197,0"
+                    Point2="30.9977966999197,0"
+                    Point3="30.9977966999197,4" />
+                  <mssgle:LineSegment
+                    End="30.9977966999197,46.7333336983786" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.9977966999197,46.7333336983786"
+                    Point2="30.9977966999197,50.7333336983786"
+                    Point3="26.9977966999197,50.7333336983786" />
+                  <mssgle:LineSegment
+                    End="15.9977966999197,50.7333336983786" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="614.4,321.6"
+          Size="614.4,364.8"
+          Id="Package\PASSO 3"
+          TopLeft="572.761885797222,54.0238091941864" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="244.166666799122,237.623810330648">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.4999911586445,0"
+              Start="0,0"
+              End="32.9999911586445,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.9999911586445,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="507.066657957766,236.457143171515">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.6952278394558,0"
+              Start="0,0"
+              End="58.1952278394558,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.1952278394558,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\PASSO 4\LOG"
+          TopLeft="50.7380934404946,35.2142859504336" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204.8,127.2"
+          Size="204.8,170.4"
+          Id="Package\PASSO 4"
+          TopLeft="1279.30947319288,150.357144008364" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2]"
+          TopLeft="1187.16188579722,235.990476601275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.1475873956617,0"
+              Start="0,0"
+              End="84.6475873956617,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.6475873956617,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\PASSO 2\Tarefa Fluxo de Dados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\PASSO 2\Tarefa Fluxo de Dados\Origem do Excel"
+          TopLeft="352.999986191591,41.9000002892812" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB"
+          TopLeft="345.666656964355,147.833332747883" />
+        <EdgeLayout
+          Id="Package\PASSO 2\Tarefa Fluxo de Dados.Paths[Saída de Origem do Excel]"
+          TopLeft="426.733321577973,83.5000002892812">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.3333324586021"
+              Start="0,0"
+              End="0,56.8333324586021">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.8333324586021" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PASSO 2\Tarefa Fluxo de Dados\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
